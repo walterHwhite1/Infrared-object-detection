@@ -1,0 +1,151 @@
+:root {
+    --ink: #eaf1fd;
+    --muted: #aebed5;
+    --border: #294468;
+    --emerald: #57e3ac;
+}
+
+[data-testid="stAppViewContainer"] {
+    background: radial-gradient(ellipse at 84% 0%, #142b4e 0%, #08111f 48%);
+}
+
+[data-testid="stHeader"] {
+    background: transparent;
+}
+
+.block-container {
+    max-width: 1330px;
+    padding-top: 3.25rem;
+    padding-bottom: 4rem;
+}
+
+[data-testid="stVerticalBlockBorderWrapper"] [data-testid="stVerticalBlockBorderWrapper"] {
+    border-color: var(--border);
+}
+
+.ir-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: clamp(1.6rem, 4vw, 3.5rem);
+    border: 1px solid #365380;
+    border-radius: 1.25rem;
+    background: linear-gradient(112deg, #142b50 0%, #102140 58%, #151c33 100%);
+    box-shadow: 0 20px 55px #02071266;
+    margin-bottom: 0.8rem;
+}
+
+.ir-hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background-image: linear-gradient(#6c9be518 1px, transparent 1px),
+                      linear-gradient(90deg, #6c9be518 1px, transparent 1px);
+    background-size: 27px 27px;
+    mask-image: linear-gradient(90deg, transparent, #000 85%);
+}
+
+.ir-hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: -1.5rem;
+    top: -4rem;
+    width: 23rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: repeating-radial-gradient(circle, transparent 0 31px, #82aefc32 32px 33px),
+                conic-gradient(from 296deg, transparent 0deg 276deg, #ff626c00 277deg, #ff626c3b 359deg);
+    mask-image: radial-gradient(circle, #000 10%, transparent 70%);
+}
+
+.ir-hero .ir-label {
+    color: #b4cdf9;
+    font-size: 0.77rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.ir-hero h1 {
+    color: var(--ink);
+    padding: 0;
+    margin: 0.4rem 0 0.55rem;
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    line-height: 1.02;
+    letter-spacing: -0.055em;
+}
+
+.ir-hero p {
+    max-width: 33rem;
+    margin: 0;
+    color: #c1cfe6;
+}
+
+.ir-state {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--emerald);
+    background: #0b322c;
+    border: 1px solid #2b6456;
+    border-radius: 999px;
+    padding: 0.27rem 0.67rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.ir-state::before {
+    content: "";
+    width: 0.38rem;
+    height: 0.38rem;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.ir-empty {
+    display: grid;
+    place-content: center;
+    text-align: center;
+    min-height: 16rem;
+    border: 1px dashed #36547c;
+    border-radius: 0.9rem;
+    padding: 1.25rem;
+    color: var(--muted);
+    background: radial-gradient(ellipse at 50% 0%, #152e4a 0%, #0b1628 75%);
+}
+
+.ir-empty strong {
+    color: var(--ink);
+    font-size: 1.18rem;
+    margin-bottom: 0.4rem;
+}
+
+[data-testid="stBaseButton-primary"] {
+    background: #c22a40;
+    border-color: #ff687a;
+    color: #fff;
+    font-weight: 700;
+}
+
+[data-testid="stBaseButton-primary"]:hover {
+    background: #aa2037;
+    color: #fff;
+}
+
+[data-testid="stBaseButton-primary"]:disabled {
+    background: #263850;
+    border-color: #3a4d66;
+    color: #aebed5;
+}
+
+[data-testid="stImage"] img {
+    border-radius: 0.65rem;
+}
+
+@media (max-width: 720px) {
+    .block-container { padding-top: 2.75rem; }
+    .ir-hero::after { opacity: 0.45; }
+}
